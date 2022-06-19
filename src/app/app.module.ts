@@ -16,6 +16,7 @@ import {  CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 import { NgxSpinnerModule } from "ngx-spinner";
+import { CarouselModule } from 'ngx-owl-carousel-o';
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import { NgxSpinnerModule } from "ngx-spinner";
     BrowserAnimationsModule,
     FormsModule,
     SharedModule,
-    CartsModule 
+    CartsModule ,
+    CarouselModule 
   ],
   providers: [],
   bootstrap: [AppComponent]
