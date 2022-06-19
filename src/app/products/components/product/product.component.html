@@ -1,0 +1,25 @@
+<div class="card text-center p-2 m-2" >
+
+    <a>
+        <div routerLink="/product-details/{{data.id}}">
+            <div class="content-img">
+                <img [src]="data.image" class="w-100" alt="">
+                <div class="body">
+                    <h4>{{data.category |titlecase}}</h4>
+                    <p>Rate {{data.rating.rate}}</p>
+                    <h6>Count {{data.rating.count}}</h6>
+                </div>
+             </div>
+        </div>
+    </a>
+    <!--  -->
+   <div class="d-flex justify-content-between align-items-center">
+      <button  class="btn btn-dark" *ngIf="!addButton" (click)="addButton =true">Add to Cart</button>
+      <div class=" d-flex w-50" *ngIf="addButton">
+          <input type="number" class="form-control" [(ngModel)]="amount">
+          <button (click)="add();addButton =false   " class="btn btn-danger">Add</button>
+      </div>
+      <span>{{data.price | currency}}</span>
+   </div>
+  
+ </div>

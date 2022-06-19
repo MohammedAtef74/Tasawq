@@ -1,0 +1,65 @@
+<section class="mt-5 pt-5">
+    <div class="container">
+
+    <div class="cartBox mt-5 pt-5">
+        <h2 class="text-danger">Shoping Cart</h2>
+        <div class="headCart">
+            <p class="lead">You have <label class="text-danger" >{{cartProducts.length}}</label> item in your cart</p>
+            <span class="text-danger card-header" (click)="clearCart()">Clear Shopping Cart</span>
+        </div>
+    
+    
+    <table class="table table-striped">
+    
+        <thead>
+            <tr>
+                <th>Image</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th style="width: 25%;">Quantity</th>
+                <th>Total</th>
+                <th></th>
+            </tr>
+        </thead>
+    
+        <tbody>
+            <tr *ngFor="let item of cartProducts; let i = index">
+                <td><img [src]="item.item.image" style="width: 80px; height: 80px; border-radius: 50%;" alt=""></td>
+                <td>{{item.item.title}}</td>
+                <td>{{item.item.price}} L.E</td>
+                <td>
+                    <div class="quantity">
+                        <button class="btn btn-dark" (click)="plusAmount(i)">+</button>
+                        <input class="form-control" type="number" (change)="detectChange()" [(ngModel)]="item.quantity" min="1">
+                        <button class="btn btn-dark" (click)="minsAmount(i)">-</button>
+                    </div>
+                </td>
+                <td>{{item.item.price * item.quantity}} L.E</td>
+                <td>
+                    <button class="btn btn-danger" (click)="deleteProduct(i)"  >Delete</button>
+                </td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                  <th></th>
+                  <th></th>
+                  <th></th>
+                  <th></th>
+                 <th>Total: {{total}} L.E</th>
+                 <th><button class="btn btn-success" (click)="addCart()">Order Now</button></th>
+            </tr>
+        </tfoot>
+    </table>
+    </div>
+    
+</div>
+
+</section>
+
+
+
+
+<div class="alert alert-success"role="alert" *ngIf="succsess"><strong>well done  </strong> Your Order is Successfully Send</div>
+
+

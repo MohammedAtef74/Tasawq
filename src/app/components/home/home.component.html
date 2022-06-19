@@ -1,0 +1,55 @@
+
+<header class=" vh-100">
+
+   <div class="layer d-flex justify-content-center align-items-center">
+
+    
+     <div class="header-content  text-white text-center">
+
+       <h1><span>T</span>asawq Market</h1>
+       <h2 class=" p-3 text-white element text-center"> Buy easier, Pay faster </h2>
+
+       <div>
+
+     </div>
+
+
+   </div>
+
+     </div>
+
+    </header>
+
+<app-about></app-about>
+
+<section class="py-5  ">
+   <ngx-loading-bar class="text-info"></ngx-loading-bar>
+
+    <ngx-spinner type="ball-scale-multiple" class="text-light load"> 
+  
+    </ngx-spinner>
+  
+     <div class="container my-5 py-5">
+
+        <div class="row">
+         
+         <div *ngFor="let product of allProduct; index as i" class="col-lg-3 col-md-4 col-sm-6">
+            <div class="card text-center p-2 m-2">
+               <div class="content-img">
+                  <img [src]="product.image" class="w-100" alt="">
+               </div>
+               <h3>{{product.name | titlecase}}</h3>
+               <h6 class="h5rice">Price : {{product.price | currency}}</h6>
+              
+               <p><button  class="btn" routerLink="/product-details/{{product.id}}">More Info</button></p>
+            </div>
+       
+         </div>
+       
+        </div>
+     </div>
+  
+  </section>
+  
+  
+  

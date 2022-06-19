@@ -1,0 +1,50 @@
+.navbar
+{
+    background-image: linear-gradient(270deg,#dfe8ec,#fff ,#fff ,#dfe8ec);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-bottom: #3871B9 solid 4px;
+}
+
+.navbar a
+{
+    color: #3871B9;
+    font-size: 16px;
+}
+.active
+{
+    color: #fff;
+    border-radius: 25px;
+}
+.active a
+{
+    background:#3871B9;
+    color: #fff;
+    border-radius: 25px;
+}
+
+.nav-item {
+    display: inline-block;
+    vertical-align: middle;
+    transform: translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    backface-visibility: hidden;
+    -moz-osx-font-smoothing: grayscale;
+    transition-duration: 0.3s;
+    transition-property: transform;
+}
+
+.nav-item:hover,
+.nav-item:focus,
+.nav-item:active {
+    transform: scale(1.1);
+}
+
+.navbar-toggler i
+{
+  color:#3871B9 ;
+}
+
+h2
+{
+    font-weight: 700;
+}

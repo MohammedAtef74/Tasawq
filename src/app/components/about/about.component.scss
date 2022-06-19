@@ -1,0 +1,31 @@
+.head-title h2
+{
+    color: #3871B9;
+    font-size: 38px;
+    font-weight: 700;
+}
+
+.head-title h3
+{
+    font-size:70px;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: #3b434a23;
+}
+
+.head-title h2::after
+{
+    content: "";
+    border-bottom:  solid 3px;
+    position: absolute;
+    width: 70px;
+    color: #3871B9;
+    bottom: 0;
+    left: 55px;    
+    height: 3px;
+}
+
+.about-image img
+{
+   border-radius: 25px;  
+}

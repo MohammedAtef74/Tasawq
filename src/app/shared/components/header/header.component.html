@@ -1,0 +1,54 @@
+<ngx-loading-bar class="text-info"></ngx-loading-bar>
+
+<ngx-spinner type="ball-scale-multiple" class="text-light load"> 
+
+<h2>Loading...</h2>
+</ngx-spinner>
+
+
+<nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container-fluid mx-3 ">
+  
+    <a class="navbar-brand pt-0 " routerLink="/home"><h2 class="logo-name">T<span>asawq</span></h2></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+      <i class="fas fa-bars "></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto ">
+        <li class="nav-item mx-1" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+          <a class="nav-link " routerLink="home"> <i class="fa-solid fa-house-chimney"></i> Home                    
+            <span class="sr-only">(current)</span></a>
+        </li>
+        
+         <li class="nav-item mx-1" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+          <a class="nav-link" routerLink="products">  <i class="fa-solid fa-heart menu-icon"></i> Products</a>
+        </li> 
+
+        <li class="nav-item mx-1" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+          <a class="nav-link" routerLink="cart"><i class="fa-solid fa-thin fa-cart-arrow-down"></i> Cart</a>
+        </li>
+        
+
+        <!-- <li class="nav-item mx-1" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+          <a class="nav-link" routerLink="product"><i class="fa-solid fa-heart menu-icon"></i> product-details</a>
+        </li>  -->
+<!-- 
+        <li class="nav-item mx-1" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+          <a class="nav-link" routerLink="login"><i class="fas fa-user-circle menu-icon"></i> Login</a>
+        </li>
+    
+        <li class="nav-item mx-1" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+          <a class="nav-link" routerLink="logout"><i class="fa-solid fa-phone menu-icon"></i> Logout</a>
+        </li>
+
+        <li class="nav-item mx-1" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+          <a class="nav-link" routerLink="signup"><i class="fas fa-user-circle menu-icon"></i> Sign Up</a>
+        </li> -->
+   
+
+       
+      </ul>
+    </div>
+  </div>
+  </nav>
