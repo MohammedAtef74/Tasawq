@@ -51,13 +51,13 @@ export class AllProductsComponent implements OnInit {
     this.ProductsService.getAllCategories().subscribe(({
       next: response => {
         this.spinner.show();
-        this.toastr.success('Get Data Succsesfly')
+        // this.toastr.success('Get Data Succsesfly')
         this.categries = response;
         console.log(response);
         this.spinner.hide();
       },
       error: error => {
-        this.toastr.error('Error 404');
+        this.toastr.error(error);
       }
     }));
   };
@@ -115,12 +115,12 @@ export class AllProductsComponent implements OnInit {
     this.spinner.show();
     this.getProducts();
     this.getCategories();
-    setTimeout(() => {
-      /** spinner ends after 5 seconds */
-      this.spinner.hide();
-    }, 1000);
-    this.stopLoading();
-
+    // setTimeout(() => {
+    //   /** spinner ends after 5 seconds */
+    //   this.spinner.hide();
+    // }, 1000);
+    // this.stopLoading();
+   this.stopLoading();
   };
 
 };

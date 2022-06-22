@@ -16,11 +16,11 @@ export class HomeComponent implements OnInit {
 
   customOptions: OwlOptions = {
     loop: true,
-    mouseDrag: false,
-    touchDrag: false,
+    mouseDrag: true,
+    touchDrag: true,
     pullDrag: false,
-    dots: false,
-    navSpeed: 700,
+    dots: true,
+    navSpeed: 500,
     navText: ['', ''],
     responsive: {
       0: {
@@ -37,7 +37,33 @@ export class HomeComponent implements OnInit {
       }
     },
     nav: true
-  }
+  };
+
+  productImage = [
+    {imgSrc:'../../assets/products/1.png', id:1},
+    {imgSrc:'../../assets/products/2.png' , id:2},
+    {imgSrc:'../../assets/products/3.png',id:3},
+    {imgSrc:'../../assets/products/4.png',id:4},
+    {imgSrc:'../../assets/products/5.png',id:5},
+    {imgSrc:'../../assets/products/6.png',id:6},
+    {imgSrc:'../../assets/products/7.png',id:7},
+    {imgSrc:'../../assets/products/8.png',id:8},
+    {imgSrc:'../../assets/products/9.png',id:9},
+    {imgSrc:'../../assets/products/10.png',id:10},
+    {imgSrc:'../../assets/products/11.png',id:11},
+    {imgSrc:'../../assets/products/12.png',id:12},
+    {imgSrc:'../../assets/products/13.png',id:13},
+    {imgSrc:'../../assets/products/14.png',id:14},
+    {imgSrc:'../../assets/products/15.png',id:15},
+    {imgSrc:'../../assets/products/16.png',id:16},
+    {imgSrc:'../../assets/products/17.png',id:17},
+    {imgSrc:'../../assets/products/18.png',id:18},
+    {imgSrc:'../../assets/products/19.png',id:19},
+    {imgSrc:'../../assets/products/20.png',id:20},
+    {imgSrc:'../../assets/products/21.png',id:21},
+    {imgSrc:'../../assets/products/22.png',id:22},
+
+  ];
   
   allProduct:any;
 
@@ -63,7 +89,7 @@ export class HomeComponent implements OnInit {
       },
       error:error=>
       {
-        this.toastr.error;
+        this.toastr.error(error);
       }
     }))
   };

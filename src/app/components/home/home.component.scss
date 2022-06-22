@@ -48,3 +48,66 @@ h1 span
     background-color: #3871B9;
     transition-duration: 0.5s;
 }
+
+.head-title h2
+{
+    color: #3871B9;
+    font-size: 38px;
+    font-weight: 700;
+}
+
+.head-title h3
+{
+    font-size:70px;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: #3b434a23;
+}
+
+.head-title h2::after
+{
+    content: "";
+    border-bottom:  solid 3px;
+    position: absolute;
+    width: 70px;
+    color: #3871B9;
+    bottom: 0;
+    left: 75px;    
+    height: 3px;
+}
+
+/*   */
+
+.head-title-2 h2
+{
+    color: #3871B9;
+    font-size: 38px;
+    font-weight: 700;
+}
+
+.head-title-2 h3
+{
+    font-size:70px;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: #3b434a23;
+}
+
+.head-title-2 h2::after
+{
+    content: "";
+    border-bottom:  solid 3px;
+    position: absolute;
+    width: 70px;
+    color: #3871B9;
+    bottom: 0;
+    left: 100px;    
+    height: 3px;
+}
+
+.product
+{
+    border-radius: 26px;
+    background-color: #fff;
+    border: #3871B9 solid 1px;
+}
