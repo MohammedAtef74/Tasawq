@@ -6,8 +6,13 @@
     
      <div class="header-content  text-white text-center">
 
-       <h1><span>T</span>asawq Market</h1>
-       <h2 class=" p-3 text-white element text-center"> Buy easier, Pay faster </h2>
+       <h1 data-aos="fade-right"
+       data-aos-offset="300"
+       data-aos-easing="ease-in-sine"><span>T</span>asawq Market</h1>
+       
+       <h2 data-aos="fade-left"
+       data-aos-offset="300"
+       data-aos-easing="ease-in-sine" class=" p-3 text-white element text-center"> Buy easier, Pay faster </h2>
 
        <div>
 
@@ -23,13 +28,19 @@
 <app-about></app-about>
 
 <section class="py-3">
-   <div class="head-title-2 text-center position-relative d-flex justify-content-center align-items-center my-2 ">
+   <div data-aos="fade-zoom-in"
+   data-aos-easing="ease-in-back"
+   data-aos-delay="500"
+   data-aos-offset="0" class="head-title-2 text-center position-relative d-flex justify-content-center align-items-center my-2 ">
       <h3 class=" mb-0">M</h3>
       <h2 class=" position-absolute mb-0 py-3 ">More Product</h2>
   </div>
    <div class="container-fluid product">
 
-     <div class="container ">
+     <div class="container " data-aos="fade-zoom-in"
+     data-aos-easing="ease-in-back"
+     data-aos-delay="700"
+     data-aos-offset="0">
 
    <div class="product-slider">
         
@@ -50,7 +61,7 @@
   </section>
 
 
-<section class="  ">
+<section>
    <ngx-loading-bar class="text-info"></ngx-loading-bar>
 
     <ngx-spinner type="ball-scale-multiple" class="text-light load"> 
@@ -59,21 +70,41 @@
   
      <div class="container my-3 py-3">
 
-      <div class="head-title text-center position-relative d-flex justify-content-center align-items-center my-2 py-3">
+      <div data-aos="fade-zoom-in"
+      data-aos-easing="ease-in-back"
+      data-aos-delay="700"
+      data-aos-offset="0" class="head-title text-center position-relative d-flex justify-content-center align-items-center my-2 py-3">
          <h3 class=" mb-0">A</h3>
          <h2 class=" position-absolute py-3 ">All Product</h2>
      </div>
-        <div class="row">
+        <div class="row"  data-aos="fade-zoom-in"
+        data-aos-easing="ease-in-back"
+        data-aos-delay="900"
+        data-aos-offset="0">
          
          <div *ngFor="let product of allProduct; index as i" class="col-lg-3 col-md-4 col-sm-6">
             <div class="card text-center p-2 m-2">
-               <div class="content-img">
+               <div  data-aos="fade-zoom-in"
+               data-aos-easing="ease-in-back"
+               data-aos-delay="1100"
+               data-aos-offset="0" class="content-img">
                   <img [src]="product.image" class="w-100" alt="">
                </div>
-               <h3>{{product.name | titlecase}}</h3>
-               <h6 class="h5rice">Price : {{product.price | currency}}</h6>
+
+               <h3  data-aos="fade-zoom-in"
+               data-aos-easing="ease-in-back"
+               data-aos-delay="1100"
+               data-aos-offset="0">{{product.name | titlecase}}</h3>
+
+               <h6  data-aos="fade-zoom-in"
+               data-aos-easing="ease-in-back"
+               data-aos-delay="1100"
+               data-aos-offset="0" class="h5rice">Price : {{product.price | currency}}</h6>
               
-               <p><button  class="btn" routerLink="/product-details/{{product.id}}">More Info</button></p>
+               <p  data-aos="fade-zoom-in"
+               data-aos-easing="ease-in-back"
+               data-aos-delay="1100"
+               data-aos-offset="0"><button  class="btn" routerLink="/product-details/{{product.id}}">More Info</button></p>
             </div>
        
          </div>

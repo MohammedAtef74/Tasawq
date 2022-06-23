@@ -1,9 +1,17 @@
 select
 {
     cursor: pointer;
+    color: #fff;
+    background-color: #3871B9;
 }
 
 option
 {
     cursor: pointer;
+}
+
+.selected
+{
+    border-radius: 16px;
+    border: solid 1px #3871B9;
 }
