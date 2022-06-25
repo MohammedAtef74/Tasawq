@@ -29,7 +29,10 @@
           <a class="nav-link" routerLink="cart"><i class="fa-solid fa-thin fa-cart-arrow-down"></i> Cart</a>
         </li>
         
-
+        <li class="nav-item mx-1" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+          <a class="nav-link" routerLink="admin"><i class="fa-solid fa-user-gear"></i> Admin</a>
+        </li>
+        
         <!-- <li class="nav-item mx-1" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
           <a class="nav-link" routerLink="product"><i class="fa-solid fa-heart menu-icon"></i> product-details</a>
         </li>  -->

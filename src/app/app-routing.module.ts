@@ -6,12 +6,14 @@ import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 import { CartComponent } from './carts/components/cart/cart.component';
+import { AdminComponent } from './carts/components/admin/admin.component';
 
 const routes: Routes = [
   {path:'', component:HomeComponent},
   {path:'home', component:HomeComponent},
   {path:'products', component:AllProductsComponent},
   {path:'cart', component:CartComponent},
+  {path:'admin', component:AdminComponent},
   {path:'product', component:ProductComponent},
   {path:'product-details/:id', component:ProductDetailsComponent},
   {path:'signup', component:SignupComponent},

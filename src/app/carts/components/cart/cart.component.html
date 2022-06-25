@@ -2,9 +2,9 @@
     <div class="container">
 
     <div class="cartBox mt-5 pt-5">
-        <h2 class="text-danger">Shoping Cart</h2>
+        <h2 class="">Shoping Cart</h2>
         <div class="headCart">
-            <p class="lead">You have <label class="text-danger" >{{cartProducts.length}}</label> item in your cart</p>
+            <p class="lead">You have <label>{{cartProducts.length}}</label> item in your cart</p>
             <span class="text-danger card-header" (click)="clearCart()">Clear Shopping Cart</span>
         </div>
     
@@ -29,9 +29,9 @@
                 <td>{{item.item.price}} L.E</td>
                 <td>
                     <div class="quantity">
-                        <button class="btn btn-dark" (click)="plusAmount(i)">+</button>
+                        <button class="btn" (click)="plusAmount(i)">+</button>
                         <input class="form-control" type="number" (change)="detectChange()" [(ngModel)]="item.quantity" min="1">
-                        <button class="btn btn-dark" (click)="minsAmount(i)">-</button>
+                        <button class="btn" (click)="minsAmount(i)">-</button>
                     </div>
                 </td>
                 <td>{{item.item.price * item.quantity}} L.E</td>
@@ -40,17 +40,12 @@
                 </td>
             </tr>
         </tbody>
-        <tfoot>
-            <tr>
-                  <th></th>
-                  <th></th>
-                  <th></th>
-                  <th></th>
-                 <th>Total: {{total}} L.E</th>
-                 <th><button class="btn btn-success" (click)="addCart()">Order Now</button></th>
-            </tr>
-        </tfoot>
+      
     </table>
+    <div class="text-right total">
+        <h5>Total: <span class="text-dark">{{total}} L.E</span> </h5>
+    <button class="btn order-now" (click)="addCart()">Order Now</button>
+    </div>
     </div>
     
 </div>
@@ -60,6 +55,6 @@
 
 
 
-<div class="alert alert-success"role="alert" *ngIf="succsess"><strong>well done  </strong> Your Order is Successfully Send</div>
+<!-- <div class="alert alert-success"role="alert" *ngIf="succsess"><strong>well done  </strong> Your Order is Successfully Send</div> -->
 
 

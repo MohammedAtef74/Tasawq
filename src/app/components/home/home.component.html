@@ -84,27 +84,15 @@
          
          <div *ngFor="let product of allProduct; index as i" class="col-lg-3 col-md-4 col-sm-6">
             <div class="card text-center p-2 m-2">
-               <div  data-aos="fade-zoom-in"
-               data-aos-easing="ease-in-back"
-               data-aos-delay="1100"
-               data-aos-offset="0" class="content-img">
+               <div class="content-img">
                   <img [src]="product.image" class="w-100" alt="">
                </div>
 
-               <h3  data-aos="fade-zoom-in"
-               data-aos-easing="ease-in-back"
-               data-aos-delay="1100"
-               data-aos-offset="0">{{product.name | titlecase}}</h3>
+               <h3>{{product.name | titlecase}}</h3>
 
-               <h6  data-aos="fade-zoom-in"
-               data-aos-easing="ease-in-back"
-               data-aos-delay="1100"
-               data-aos-offset="0" class="h5rice">Price : {{product.price | currency}}</h6>
+               <h6 class="h5rice">Price : {{product.price | currency}}</h6>
               
-               <p  data-aos="fade-zoom-in"
-               data-aos-easing="ease-in-back"
-               data-aos-delay="1100"
-               data-aos-offset="0"><button  class="btn" routerLink="/product-details/{{product.id}}">More Info</button></p>
+               <p><button  class="btn" routerLink="/product-details/{{product.id}}">More Info</button></p>
             </div>
        
          </div>

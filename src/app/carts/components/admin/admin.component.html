@@ -1,0 +1,63 @@
+<section class="mt-5 pt-5">
+    <div class="container">
+
+    <div class="cartBox mt-5 pt-5">    
+
+        <form [formGroup]="form" class="my-2">
+            <div class="row">
+                <div class="col-md-3">
+                    <label>Start Date</label>
+                    <input type="date" formControlName="start"  class=" form-control">
+                </div>
+                <!--  -->
+                <div class="col-md-3">
+                    <label>End Date</label>
+                    <input type="date" formControlName="end"  class=" form-control">
+                </div>
+                <!--  -->
+                <div class="col-md-2 d-flex align-items-end apply">
+                 <button (click)="applyFilter()" class=" btn ">Apply</button>
+                </div>
+            </div>
+        </form>
+    
+    <table class="table table-striped">
+    
+        <thead class=" text-center">
+                <th></th>
+                <th>Date</th>
+               
+                <th style="width: 25%;">Quantity</th>
+                <th></th>
+        </thead>
+    
+        <tbody class=" text-center">
+            <tr *ngFor="let item of carts">
+                <td></td>
+                <td>{{item?.date}}</td>
+                
+                  <td>{{item.products?.length}}</td>
+                
+                <td> 
+                    <button class="btn btn-danger mx-1" >Delete</button>
+                    <button class="btn btn-info mx-1"  >View</button>
+                   
+                </td>
+            </tr>
+        </tbody>
+      
+    </table>
+    <!-- <div class="text-right total">
+        <h5>Total: <span class="text-dark"> L.E</span> </h5>
+    </div> -->
+    </div>
+    
+</div>
+
+</section>
+
+
+
+
+
+

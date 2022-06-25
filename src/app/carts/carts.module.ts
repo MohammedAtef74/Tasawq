@@ -4,12 +4,14 @@ import { SharedModule } from './../shared/shared.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CartComponent } from './components/cart/cart.component';
+import { AdminComponent } from './components/admin/admin.component';
 
 
 
 @NgModule({
   declarations: [
-    CartComponent
+    CartComponent,
+    AdminComponent
   ],
   imports: [
     CommonModule,
