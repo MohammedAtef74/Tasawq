@@ -63,6 +63,20 @@ export class AdminComponent implements OnInit {
       }));
     };
   
+    deleteCart(id:number)
+    {
+       this.service.deleteCart(id).subscribe(({
+        next:response=>
+        {
+           response = this.toastr.error('Cart Deleted Success');
+           this.getCarts();
+        },
+        error:error=>
+        {
+            error = this.toastr.error(error)
+        }
+       }));
+    };
   
  
   

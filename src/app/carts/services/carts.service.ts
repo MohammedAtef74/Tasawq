@@ -22,4 +22,9 @@ export class CartsService {
     return this.HttpClient.get(environment.baseUrl + 'carts' , {params})
   };
 
+  deleteCart(id:number)
+  {
+    return this.HttpClient.delete(environment.baseUrl + 'carts/' + id)
+  }
+
 };
