@@ -1,3 +1,5 @@
+import { product } from './../../../products/models/product';
+import { ProductsService } from './../../../products/services/products.service';
 import { ToastrService } from 'ngx-toastr';
 import { CartsService } from './../../services/carts.service';
 import { NgxSpinnerService } from 'ngx-spinner';
@@ -15,11 +17,14 @@ export class AdminComponent implements OnInit {
   
   carts:any;
   form !:FormGroup ;
+  products:any ; 
+  details :any;
   constructor(  private loadingBar: LoadingBarService ,
     private spinner: NgxSpinnerService,
     private service:CartsService,
     private toastr: ToastrService,
-    private build:FormBuilder) { };
+    private build:FormBuilder ,
+    private productService:ProductsService) { };
 
      
     startLoading()
@@ -78,6 +83,17 @@ export class AdminComponent implements OnInit {
        }));
     };
   
+    viewDetails(index:number)
+    {
+      this.products = [];
+       this.details = this.carts[index];
+       for(let x in this.details.products)
+       {
+          this.productService.getProductById(this.details.products[x].productId).subscribe( res =>{
+            this.products?.push({item:res , quantity:this.details.products[x].quantity})
+          })
+       };
+    };
  
   
    
