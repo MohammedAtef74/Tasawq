@@ -29,4 +29,15 @@ export class ProductsService {
     return this.http.get(baseUrl + 'products/' + id)
   };
 
-}
+  createProduct(model:any)
+  {
+    return this.http.post(baseUrl + 'products/' , model)
+  };
+
+  updateProduct(id:any)
+  {
+    return this.http.put(baseUrl + 'products/' , id)
+  };
+
+
+};

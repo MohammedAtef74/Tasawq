@@ -1,0 +1,72 @@
+.add 
+{
+    border-radius: 26px;
+    background-color: #3871B9;
+    color: #FFF;
+}
+
+thead
+{
+    color: #3871B9;
+}
+
+textarea
+{
+    max-width: 100%;
+    min-width: 100%;
+    max-height: 120px;
+    min-height: 120px;
+}
+
+.modal
+{
+    img{
+        width: 100%;
+        max-height: 85px;
+    }
+
+    h5
+    {
+        color: #3871B9;
+    }
+    input
+    {
+        border-radius: 16px;
+        color:#3871B9;
+        border: #3871B9 solid 1px;   
+    }
+}
+
+.modal label
+{
+    color: #3871B9;
+}
+
+.modal textarea
+{
+    border-radius: 16px;
+    color:#3871B9;
+    border: #3871B9 solid 1px;
+}
+
+.modal-footer .add
+{
+    border-radius: 26px;
+    background-color: #3871B9;
+    color:#fff;
+    border: #fff solid 2px;
+}
+
+.modal-footer .close
+{
+    border-radius: 26px;
+    background: red;
+    padding: 8px;
+    font-size: 18px;
+    color:#fff;
+    border: #fff solid 2px;
+}
+
+
+
+

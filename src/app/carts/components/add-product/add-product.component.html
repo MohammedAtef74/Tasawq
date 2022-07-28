@@ -1,0 +1,184 @@
+<section class=" my-5">
+
+    <ngx-spinner type="ball-scale-multiple" class="text-light load"> 
+  
+    </ngx-spinner>
+    <div class="container py-5">
+
+        <div class="row">
+
+            <button class=" btn add" data-toggle="modal" data-target="#add">Add Product</button>
+
+            <table class="table table-striped my-2">
+              
+                <thead class=" text-center">
+                    <th>Image</th>
+                    <th>Name</th>
+                    <th>Category</th>
+                    <th>Price</th>
+                </thead>
+
+                <tbody class="text-center">
+                    <tr *ngFor="let product of allProduct; let i =index">
+                        <td><img [src]="product.image" style="width:50px; height:50px" class="rounded-circle" alt=""></td>
+
+                        <td>{{product.title}}</td>
+                        <td>{{product.category|titlecase}}</td>
+                        <td>{{product.price|currency}}</td>
+                        <td><button class="btn btn-warning" data-toggle="modal" data-target="#edit" (click)="setItemValue(product);">Update</button></td>
+                    </tr>
+                </tbody>
+
+            </table>
+        </div>
+        
+    </div>
+
+</section>
+
+
+
+
+  <!-- --------Add Product Modal-------- -->
+
+
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="add" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Add Product </h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          
+            <div class="container">
+                <form  [formGroup]="form">
+                    <div class="row">
+                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
+                            <div class="title">
+                                <label for="Title"> Title</label>
+                                    <input formControlName="title" class="form-control" type="text" placeholder="Title">
+                            </div>
+                        </div>
+                        <!--  -->
+                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
+                            <div class="Price">
+                                <label for="Price"> Price</label>
+                                    <input formControlName="price" class="form-control" type="number" placeholder="Price">
+                            </div>
+                        </div>
+                        <!--  -->
+                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
+                            <div class="Categories">
+                                <label for="Categories"> </label>
+                                  <app-select [data]="categries"[title]="'Categories' " (selectedValue)="getSelectedCategory($event)" [all]="false" ></app-select>
+                            </div>
+                        </div>
+                        <!--  -->
+                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+                            <div class="product-image">
+                                <label for="Image">Image</label>
+                                <img src="{{base64}}" alt="">
+                                <input type="file" class="form-control" (change)="getImagePath($event)">
+                            </div>
+                        </div>
+                          <!--  -->
+                          <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12">
+                            <div class="product-desc">
+                                <label for="Description">Description </label>
+                                    <textarea placeholder="Type Here" class="form-control" formControlName="description"></textarea>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </form>
+     
+
+            </div>
+            
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn close" data-dismiss="modal">Close</button>
+          <button type="button" class="btn add" [disabled]="form.invalid" (click)="addProduct()">Add Product</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+   <!-- --------Update Product Modal-------- -->
+
+
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="edit" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Update Product </h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          
+            <div class="container">
+                <form [formGroup]="updateForm">
+                    <div class="row">
+                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
+                            <div class="title">
+                                <label for="Title"> Title</label>
+                                    <input formControlName="title" class="form-control" type="text" placeholder="Title">
+                            </div>
+                        </div>
+                        <!--  -->
+                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
+                            <div class="Price">
+                                <label for="Price"> Price</label>
+                                    <input formControlName="price" class="form-control" type="number" placeholder="Price">
+                            </div>
+                        </div>
+                        <!--  -->
+                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
+                            <div class="Categories">
+                                <label for="Categories"> </label>
+                                  <app-select [data]="categries"[title]="'Categories' " (selectedValue)="getSelectedCategory($event)" [all]="false" [select]="form.value.category"></app-select>
+                            </div>
+                        </div>
+                        <!--  -->
+                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+                            <div class="product-image">
+                                <label for="Image">Image</label>
+                                <img src="{{base64}}" alt="">
+                                <input type="file" class="form-control" (change)="getImagePath($event)">
+                            </div>
+                        </div>
+                          <!--  -->
+                          <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12">
+                            <div class="product-desc">
+                                <label for="Description">Description </label>
+                                    <textarea placeholder="Type Here" class="form-control" formControlName="description"></textarea>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </form>
+     
+
+            </div>
+            
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn close" data-dismiss="modal">Close</button>
+          <button type="button" class="btn add" (click)="update(updateForm.controls.value)">Update</button>
+        </div>
+      </div>
+    </div>
+  </div>
